@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductInCartCellView: View {
 
-    @StateObject var viewModel: ProductViewModel
+    @State var viewModel: ProductViewModel
     @State private var showingRemoveAlert = false
 
     var body: some View {
@@ -24,6 +24,8 @@ struct ProductInCartCellView: View {
                     .foregroundColor(.secondary)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+
+//            let _ = print("\(viewModel.product) \(viewModel.quantityInCart)")
 
             RemoveFromCartButton {
                 showingRemoveAlert = true

@@ -9,11 +9,13 @@ import Foundation
 import Combine
 
 @MainActor
-final class CartViewModel: ObservableObject {
+@Observable
+final class CartViewModel {
 
-    @Published private(set) var products: [Product] = []
+    private(set) var products: [Product] = []
 
     let cartManager: CartManager
+    @ObservationIgnored
     private var cancellables: Set<AnyCancellable> = []
 
     init(cartManager: CartManager) {

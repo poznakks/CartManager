@@ -9,12 +9,14 @@ import Foundation
 import Combine
 
 @MainActor
-final class ProductViewModel: ObservableObject {
+@Observable
+final class ProductViewModel {
 
     let product: Product
-    @Published private(set) var quantityInCart: Int = 0
+    private(set) var quantityInCart: Int = 0
 
     private let cartManager: CartManager
+    @ObservationIgnored
     private var cancellables: Set<AnyCancellable> = []
 
     init(product: Product, cartManager: CartManager) {

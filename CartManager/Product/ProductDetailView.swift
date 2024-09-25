@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
 
-    @ObservedObject var viewModel: ProductViewModel
+    @State var viewModel: ProductViewModel
 
     var body: some View {
         VStack(spacing: 20) {
@@ -20,6 +20,8 @@ struct ProductDetailView: View {
             Text("$\(viewModel.product.price)")
                 .font(.title)
                 .foregroundColor(.secondary)
+
+//            let _ = print("\(viewModel.product) \(viewModel.quantityInCart)")
 
             let quantity = viewModel.quantityInCart
             if quantity > 0 {

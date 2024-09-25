@@ -8,9 +8,10 @@
 import Foundation
 
 @MainActor
-final class CatalogueViewModel: ObservableObject {
+@Observable
+final class CatalogueViewModel {
 
-    @Published private(set) var products: [Product] = []
+    private(set) var products: [Product] = []
 
     let cartManager: CartManager
     

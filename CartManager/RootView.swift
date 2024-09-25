@@ -22,6 +22,8 @@ struct RootView: View {
             )
             }
 
+//            let _ = print("render")
+
             CartView(
                 viewModel: CartViewModel(cartManager: cartManager)
             )
