@@ -14,7 +14,11 @@ final class CartViewModel {
 
     private(set) var products: [Product] = []
 
-    let cartManager: CartManager
+    @ObservationIgnored
+    private var productViewModels: [Product: ProductViewModel] = [:]
+
+    private let cartManager: CartManager
+
     @ObservationIgnored
     private var cancellables: Set<AnyCancellable> = []
 
@@ -26,6 +30,17 @@ final class CartViewModel {
                 self?.products = updatedCartItems.keys.elements
             }
             .store(in: &cancellables)
+        print("created CartViewModel")
+    }
+
+    func productViewModel(for product: Product) -> ProductViewModel {
+        if let viewModel = productViewModels[product] {
+            return viewModel
+        } else {
+            let newViewModel = ProductViewModel(product: product, cartManager: cartManager)
+            productViewModels[product] = newViewModel
+            return newViewModel
+        }
     }
 
     func onAppear() {

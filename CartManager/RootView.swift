@@ -9,24 +9,22 @@ import SwiftUI
 
 struct RootView: View {
 
-    @StateObject private var cartManager = CartManager()
+    var catalogueViewModel: CatalogueViewModel
+    var cartViewModel: CartViewModel
+    @ObservedObject var cartManager: CartManager
 
     var body: some View {
         TabView {
-            CatalogueView(
-                viewModel: CatalogueViewModel(cartManager: cartManager)
-            )
+            CatalogueView(viewModel: catalogueViewModel)
             .tabItem { Label(
                 title: { Text("Home") },
                 icon: { Image(systemName: "house") }
             )
             }
 
-//            let _ = print("render")
+            let _ = print("render RootView")
 
-            CartView(
-                viewModel: CartViewModel(cartManager: cartManager)
-            )
+            CartView(viewModel: cartViewModel)
             .tabItem { Label(
                 title: { Text("Cart") },
                 icon: { Image(systemName: "basket") }
@@ -38,5 +36,10 @@ struct RootView: View {
 }
 
 #Preview {
-    RootView()
+    let cartManager = CartManager()
+    RootView(
+        catalogueViewModel: CatalogueViewModel(cartManager: cartManager),
+        cartViewModel: CartViewModel(cartManager: cartManager),
+        cartManager: cartManager
+    )
 }

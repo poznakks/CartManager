@@ -21,20 +21,12 @@ struct CatalogueView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(viewModel.products) { product in
+                        let productViewModel = viewModel.productViewModel(for: product)
+
                         NavigationLink {
-                            ProductDetailView(
-                                viewModel: ProductViewModel(
-                                    product: product,
-                                    cartManager: viewModel.cartManager
-                                )
-                            )
+                            ProductDetailView(viewModel: productViewModel)
                         } label: {
-                            ProductCellView(
-                                viewModel: ProductViewModel(
-                                    product: product,
-                                    cartManager: viewModel.cartManager
-                                )
-                            )
+                            ProductCellView(viewModel: productViewModel)
                         }
                     }
                 }

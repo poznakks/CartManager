@@ -16,20 +16,12 @@ struct CartView: View {
             ScrollView {
                 LazyVStack(spacing: 10) {
                     ForEach(viewModel.products) { product in
+                        let productViewModel = viewModel.productViewModel(for: product)
+
                         NavigationLink {
-                            ProductDetailView(
-                                viewModel: ProductViewModel(
-                                    product: product,
-                                    cartManager: viewModel.cartManager
-                                )
-                            )
+                            ProductDetailView(viewModel: productViewModel)
                         } label: {
-                            ProductInCartCellView(
-                                viewModel: ProductViewModel(
-                                    product: product,
-                                    cartManager: viewModel.cartManager
-                                )
-                            )
+                            ProductInCartCellView(viewModel: productViewModel)
                         }
 
                     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductInCartCellView: View {
 
-    @State var viewModel: ProductViewModel
+    var viewModel: ProductViewModel
     @State private var showingRemoveAlert = false
 
     var body: some View {
