@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 @Observable
@@ -19,18 +18,17 @@ final class CartViewModel {
 
     private let cartManager: CartManager
 
-    @ObservationIgnored
-    private var cancellables: Set<AnyCancellable> = []
-
     init(cartManager: CartManager) {
         self.cartManager = cartManager
-        cartManager.$cartItems
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] updatedCartItems in
-                self?.products = updatedCartItems.keys.elements
+        listenToCartItems()
+    }
+
+    private func listenToCartItems() {
+        Task {
+            for await cartItems in cartManager.$cartItems.values {
+                self.products = cartItems.keys.elements
             }
-            .store(in: &cancellables)
-        print("created CartViewModel")
+        }
     }
 
     func productViewModel(for product: Product) -> ProductViewModel {
