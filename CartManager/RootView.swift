@@ -22,8 +22,6 @@ struct RootView: View {
             )
             }
 
-            let _ = print("render RootView")
-
             CartView(viewModel: cartViewModel)
             .tabItem { Label(
                 title: { Text("Cart") },

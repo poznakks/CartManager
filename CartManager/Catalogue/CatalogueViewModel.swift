@@ -20,7 +20,6 @@ final class CatalogueViewModel {
     
     init(cartManager: CartManager) {
         self.cartManager = cartManager
-        print("created CatalogueViewModel")
     }
 
     func productViewModel(for product: Product) -> ProductViewModel {

@@ -25,8 +25,6 @@ struct ProductInCartCellView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
-//            let _ = print("\(viewModel.product) \(viewModel.quantityInCart)")
-
             RemoveFromCartButton {
                 showingRemoveAlert = true
             }

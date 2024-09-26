@@ -21,8 +21,6 @@ struct ProductDetailView: View {
                 .font(.title)
                 .foregroundColor(.secondary)
 
-//            let _ = print("\(viewModel.product) \(viewModel.quantityInCart)")
-
             let quantity = viewModel.quantityInCart
             if quantity > 0 {
                 ChangeQuantityButtons(quantity: quantity) {

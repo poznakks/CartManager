@@ -23,10 +23,6 @@ struct ProductCellView: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
 
-//            if viewModel.product.name == "iPhone 15 Pro" || viewModel.product.name == "Samsung Galaxy S23" {
-//                let _ = print("\(viewModel.product) \(viewModel.quantityInCart)")
-//            }
-
             let quantity = viewModel.quantityInCart
             if quantity > 0 {
                 ChangeQuantityButtons(quantity: quantity) {
