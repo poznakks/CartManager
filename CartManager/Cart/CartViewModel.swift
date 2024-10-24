@@ -24,10 +24,8 @@ final class CartViewModel {
     }
 
     private func listenToCartItems() {
-        Task {
-            for await cartItems in cartManager.$cartItems.values {
-                self.products = cartItems.keys.elements
-            }
+        observe(\.cartManager.cartItems) { cartItems in
+            self.products = cartItems.keys.elements
         }
     }
 

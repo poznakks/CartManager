@@ -9,10 +9,11 @@ import Foundation
 import Collections
 
 @MainActor
-final class CartManager: ObservableObject {
-    
-    @Published private(set) var cartItems: OrderedDictionary<Product, Int> = [:]
-    @Published private(set) var totalInCart: Int = 0
+@Observable
+final class CartManager {
+
+    private(set) var cartItems: OrderedDictionary<Product, Int> = [:]
+    private(set) var totalInCart: Int = 0
 
     private let cartService: CartServiceProtocol
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CartView: View {
 
-    @State var viewModel: CartViewModel
+    let viewModel: CartViewModel
 
     var body: some View {
         NavigationStack {

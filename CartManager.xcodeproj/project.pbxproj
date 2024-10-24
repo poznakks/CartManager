@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212B3A722CCAC47100A4925B /* Observable+observe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B3A712CCAC46400A4925B /* Observable+observe.swift */; };
 		21ABE9EC2C82630A00857C0C /* CartManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ABE9EB2C82630A00857C0C /* CartManagerApp.swift */; };
 		21ABE9EE2C82630A00857C0C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ABE9ED2C82630A00857C0C /* RootView.swift */; };
 		21ABE9F02C82630C00857C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21ABE9EF2C82630C00857C0C /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212B3A712CCAC46400A4925B /* Observable+observe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+observe.swift"; sourceTree = "<group>"; };
 		21ABE9E82C82630A00857C0C /* CartManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21ABE9EB2C82630A00857C0C /* CartManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManagerApp.swift; sourceTree = "<group>"; };
 		21ABE9ED2C82630A00857C0C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				21B5F0C52C84C4580027AF95 /* Product */,
 				21ABE9FF2C8266B600857C0C /* Product.swift */,
 				21ABEA052C828BFC00857C0C /* ReusableViews.swift */,
+				212B3A712CCAC46400A4925B /* Observable+observe.swift */,
 			);
 			path = CartManager;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				21ABE9FA2C82639300857C0C /* NetworkClient.swift in Sources */,
 				21ABEA062C828BFC00857C0C /* ReusableViews.swift in Sources */,
 				21B5F0BE2C84A8650027AF95 /* ProductCellView.swift in Sources */,
+				212B3A722CCAC47100A4925B /* Observable+observe.swift in Sources */,
 				21ABEA042C8281F800857C0C /* CatalogueViewModel.swift in Sources */,
 				21B5F0C22C84A90E0027AF95 /* ProductInCartCellView.swift in Sources */,
 				21ABE9FC2C82643800857C0C /* CartService.swift in Sources */,
@@ -381,7 +385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -411,7 +415,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

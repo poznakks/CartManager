@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CatalogueView: View {
 
-    @State var viewModel: CatalogueViewModel
+    let viewModel: CatalogueViewModel
 
     private let columns = [
         GridItem(.flexible(), spacing: 10),

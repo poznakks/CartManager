@@ -9,9 +9,9 @@ import SwiftUI
 
 struct RootView: View {
 
-    var catalogueViewModel: CatalogueViewModel
-    var cartViewModel: CartViewModel
-    @ObservedObject var cartManager: CartManager
+    let catalogueViewModel: CatalogueViewModel
+    let cartViewModel: CartViewModel
+    let cartManager: CartManager
 
     var body: some View {
         TabView {
